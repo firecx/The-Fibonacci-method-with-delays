@@ -75,19 +75,6 @@
             this.SwitchButton.Text = "Анализ";
             this.SwitchButton.Click += new System.EventHandler(this.Switch_Click);
             // 
-            // chart
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
-            this.chart.Location = new System.Drawing.Point(557, 152);
-            this.chart.Name = "chart";
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Числа";
-            this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(363, 247);
-            this.chart.TabIndex = 1;
-            this.chart.Text = "chart";
-            // 
             // numbersCount
             // 
             this.numbersCount.Location = new System.Drawing.Point(371, 31);
