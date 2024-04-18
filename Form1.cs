@@ -55,7 +55,6 @@ namespace The_Fibonacci_method_with_delays
 
         private void start_Click(object sender, EventArgs e)
         {
-            string numbersSrting = string.Empty;  
             numbers.Clear();
 
             //Генерайия псевдослучайных чисел
