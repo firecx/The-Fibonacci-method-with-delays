@@ -71,8 +71,8 @@
             // SwitchButton
             // 
             this.SwitchButton.Name = "SwitchButton";
-            this.SwitchButton.Size = new System.Drawing.Size(74, 24);
-            this.SwitchButton.Text = "Анализ";
+            this.SwitchButton.Size = new System.Drawing.Size(114, 24);
+            this.SwitchButton.Text = "Гистограмма";
             this.SwitchButton.Click += new System.EventHandler(this.Switch_Click);
             // 
             // numbersCount

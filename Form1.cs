@@ -30,10 +30,15 @@ namespace The_Fibonacci_method_with_delays
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            int genMax = (int)Math.Pow(2,31);
             //Заполнение списка через стандартный генератор псевдослучайных чисел
             for (int i = 0; i < 56; i++)
             {
                 numbersDictionary.Add(rnd.Next());
+            }
+            for (int i = 0;i <1000; i++)
+            {
+                random_Fibonacci(1, genMax, numbersDictionary);
             }
         }
 
@@ -113,10 +118,11 @@ namespace The_Fibonacci_method_with_delays
             else
             {
                 chart.Visible = false;
-                SwitchButton.Text = "Анализ";
+                SwitchButton.Text = "Гистограмма";
             }
         }
 
+        //Сохранение сгенерированных чисел
         private void SaveButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
