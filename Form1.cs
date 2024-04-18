@@ -25,8 +25,11 @@ namespace The_Fibonacci_method_with_delays
         //Список содержащий генерируемые числа
         List<int> numbers = new List<int>();
 
-        //Стандартный генератор псевдослучайных чисел
-        Random rnd = new Random();
+        long a = 1664525;
+        long c = 1013904223;
+        static long m = 4294967296;
+        static long seed = DateTime.Now.Ticks % m;
+        long current = seed;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,7 +37,7 @@ namespace The_Fibonacci_method_with_delays
             //Заполнение списка через стандартный генератор псевдослучайных чисел
             for (int i = 0; i < 56; i++)
             {
-                numbersDictionary.Add(rnd.Next());
+                numbersDictionary.Add(Rnd());
             }
             for (int i = 0;i <1000; i++)
             {
@@ -42,6 +45,12 @@ namespace The_Fibonacci_method_with_delays
             }
         }
 
+        //Линейный конгруэнтный генератор псевдослучайных чисел
+        private int Rnd()
+        {   
+            current = (a * current + c) % m;
+            return (int)current;
+        }
 
         //Реализация генерации псевдослучайных чисел по методу Фибаначи с запозданием
         private int random_Fibonacci(int min, int max, List<int> numDictionary)
@@ -76,11 +85,7 @@ namespace The_Fibonacci_method_with_delays
         private void List_to_text()
         {
             string numbersSrting = string.Empty;
-            foreach (var item in numbers)
-            {
-                numbersSrting += item + "; ";
-            }
-
+            numbersSrting = String.Join(", ", numbers);
             field.Text = numbersSrting;
         }
 
